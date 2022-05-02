@@ -42,10 +42,17 @@ jobs:
       - name: Run tests
         run: dart test
   artifact:
-    if: ${{ github.event.ref_type == 'tag' }}
+    # if: ${{ github.event.ref_type == 'tag' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: ./pubspec.yaml
+
+      - name: Test
+        # if: ${{ github.event_name == 'create' && github.event.ref_type == 'tag' }}
+        run: | 
+          echo "github.ref ${{ github.ref }}"
+          echo "github.event.ref_type ${{ github.event.ref_type }}"
+
