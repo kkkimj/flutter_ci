@@ -57,7 +57,7 @@ jobs:
           echo "github.ref ${{ github.ref }}"
           echo "github.event.ref_type ${{ github.event.ref_type }}"
           echo "contains(github.ref, 'refs/tags/') ${{ contains(github.ref, 'refs/tags/') }}"
-          echo "startWith(github.ref, 'refs/tags/') ${{ startWith(github.ref, 'refs/tags/') }}"
+          echo "startsWith(github.ref, 'refs/tags/') ${{ startsWith(github.ref, 'refs/tags/') }}"
           echo "github.ref == 'refs/tags/**' ${{ github.ref == 'refs/tags/**' }}"
           echo "github.ref == 'refs/tags/*' ${{ github.ref == 'refs/tags/*' }}"
 
