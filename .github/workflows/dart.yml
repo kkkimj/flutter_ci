@@ -41,3 +41,10 @@ jobs:
       # want to change this to 'flutter test'.
       - name: Run tests
         run: dart test
+  
+  artifact:
+    if: ${{ github.ref == 'refs/tags/**' }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: ./pubspec.yaml
