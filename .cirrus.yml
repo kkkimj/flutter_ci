@@ -8,6 +8,6 @@ container:
 #     populate_script: yarn install
 #   test_script: yarn test
 
-flutter_tests:
+flutter_tests_task:
   flutter_version:
-    flutter --version
+    flutter_version_script: flutter --version
