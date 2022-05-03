@@ -1,9 +1,13 @@
 container:
-  image: node:latest
+  image: cirrusci/flutter:latest
 
-check_task:
-  node_modules_cache:
-    folder: node_modules
-    fingerprint_script: cat yarn.lock
-    populate_script: yarn install
-  test_script: yarn test
+# check_task:
+#   node_modules_cache:
+#     folder: node_modules
+#     fingerprint_script: cat yarn.lock
+#     populate_script: yarn install
+#   test_script: yarn test
+
+flutter_tests:
+  flutter_version:
+    flutter --version
