@@ -17,6 +17,14 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  flutter_tests:
+    docker:
+      - image: cirrusci/flutter:latest
+    steps:
+      - checkout
+      - run:
+          name: "Flutter version"
+          command: "Flutter --version"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,3 +32,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - flutter_tests
