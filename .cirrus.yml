@@ -11,3 +11,18 @@ container:
 flutter_tests_task:
   flutter_version:
     flutter_version_script: flutter --version
+
+test_task:
+  pub_cache:
+    folder: ~/.pub-cache
+  test_script: flutter test -machine > report.json
+  always:
+    report_artifacts:
+      path: report.json
+      format: flutter
+
+
+flutter_build_task:
+  pub_cache:
+    folder: ~/.pub-cache
+  test_script: flutter build web
