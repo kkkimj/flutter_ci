@@ -1,0 +1,17 @@
+name: Flutter Docker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  flutter_checkup:
+    container: node:14.16
+    runs-on: cirrusci/flutter:latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Flutter Version
+        run: |
+          flutter --version
+          ls
